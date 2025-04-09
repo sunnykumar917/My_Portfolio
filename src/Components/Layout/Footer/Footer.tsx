@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, IconButton, Divider, Link } from '@mui/material';
+import { Box, Typography, IconButton, Divider, Link } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -8,10 +8,10 @@ const Footer: React.FC = () => {
   return (
     <Box sx={{ backgroundColor: '#212121', color: 'white', padding: '40px 0', mt: '40px' }}>
       <Box sx={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px' }}>
-        {/* Grid container */}
-        <Grid container spacing={4} sx={{ justifyContent: 'center' }}>
+        {/* Container for sections */}
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
           {/* Left section: About */}
-          <Grid item xs={12} sm={6} md={4} sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: 'center', mb: 4, flexBasis: '100%', md: '30%' }}>
             <Typography 
               variant="h6" 
               sx={{ 
@@ -33,10 +33,10 @@ const Footer: React.FC = () => {
             >
               I'm a passionate web developer focused on creating beautiful and responsive websites. Let's connect and collaborate!
             </Typography>
-          </Grid>
+          </Box>
 
           {/* Middle section: Social Links */}
-          <Grid item xs={12} sm={6} md={4} sx={{ textAlign: 'center' }}>
+          <Box sx={{ textAlign: 'center', mb: 4, flexBasis: '100%', md: '30%' }}>
             <Typography 
               variant="h6" 
               sx={{ 
@@ -65,11 +65,11 @@ const Footer: React.FC = () => {
                 </IconButton>
               </Link>
             </Box>
-          </Grid>
+          </Box>
 
           {/* Right section: Footer Links */}
-          <Grid item xs={12} sx={{ textAlign: 'center' }}>
-            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 5, mt: 4, flexWrap: 'wrap' }}>
+          <Box sx={{ textAlign: 'center', mb: 4, flexBasis: '100%', md: '30%' }}>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 5, flexWrap: 'wrap' }}>
               <Link href="#about" color="inherit" sx={{ fontSize: '14px', textTransform: 'uppercase', letterSpacing: 1 }}>
                 About
               </Link>
@@ -83,15 +83,15 @@ const Footer: React.FC = () => {
                 Contact
               </Link>
             </Box>
-          </Grid>
+          </Box>
+        </Box>
 
-          {/* Copyright */}
-          <Grid item xs={12} sx={{ textAlign: 'center', mt: 4 }}>
-            <Typography variant="body2" sx={{ fontSize: '12px', color: '#bdbdbd' }}>
-              &copy; {new Date().getFullYear()} Your Name. All Rights Reserved.
-            </Typography>
-          </Grid>
-        </Grid>
+        {/* Copyright */}
+        <Box sx={{ textAlign: 'center', mt: 4 }}>
+          <Typography variant="body2" sx={{ fontSize: '12px', color: '#bdbdbd' }}>
+            &copy; {new Date().getFullYear()} Your Name. All Rights Reserved.
+          </Typography>
+        </Box>
 
         {/* Divider for visual separation */}
         <Divider sx={{ borderColor: 'rgba(255, 255, 255, 0.2)', marginTop: '30px' }} />
@@ -101,3 +101,6 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+// In this code, we have created a footer component using Material-UI components. The footer includes sections for "About Me", "Connect with Me" (social media links), and navigation links. The styles are responsive, adjusting font sizes and layout based on screen size. The social media icons change color on hover for better user interaction.
+// The footer is designed to be visually appealing and functional, providing users with easy access to your social media profiles and important links.
+// You can customize the links and styles further to match your personal branding or website theme.
