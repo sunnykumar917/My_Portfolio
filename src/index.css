@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and border do not affect element's width and height */
+  font-family: sans-serif; /* Or any font of your choice */
+  font-size: 100%; /* Ensures consistent font size across browsers */
+  vertical-align: baseline; /* Ensures consistent alignment of inline elements */
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  line-height: 1.5; /* Sets a base line-height for better readability */
+  -webkit-font-smoothing: antialiased; /* Improves font rendering on webkit-based browsers */
+  -moz-osx-font-smoothing: grayscale; /* Improves font rendering on macOS */
+}
+
