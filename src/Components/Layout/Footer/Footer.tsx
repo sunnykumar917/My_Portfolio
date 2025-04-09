@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
           </Box>
         </Box>
 
-        {/* Copyright */}
+        
         <Box sx={{ textAlign: 'center', mt: 4 }}>
           <Typography variant="body2" sx={{ fontSize: '12px', color: '#bdbdbd' }}>
             &copy; {new Date().getFullYear()} Your Name. All Rights Reserved.
