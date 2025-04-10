@@ -101,6 +101,3 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
-// In this code, we have created a footer component using Material-UI components. The footer includes sections for "About Me", "Connect with Me" (social media links), and navigation links. The styles are responsive, adjusting font sizes and layout based on screen size. The social media icons change color on hover for better user interaction.
-// The footer is designed to be visually appealing and functional, providing users with easy access to your social media profiles and important links.
-// You can customize the links and styles further to match your personal branding or website theme.
