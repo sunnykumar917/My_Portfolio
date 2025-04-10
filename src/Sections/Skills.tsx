@@ -1,5 +1,3 @@
-// Skills.tsx
-import React from 'react';
 import { Box, Container, Typography, Chip, Stack } from '@mui/material';
 
 const skillsData = [
