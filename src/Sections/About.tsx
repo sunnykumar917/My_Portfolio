@@ -1,6 +1,6 @@
 import { Box, Container, Typography, Paper, Button } from '@mui/material';
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <Box
       sx={{
@@ -30,7 +30,7 @@ const About = () => {
             flexDirection: { xs: 'column', md: 'row' },
             justifyContent: 'space-between',
             gap: 4,
-            alignItems: 'stretch', // Ensures both sections stretch to the same height
+            alignItems: 'stretch',
           }}
         >
           {/* First Section - Who Am I */}
@@ -40,112 +40,40 @@ const About = () => {
               backgroundColor: '#fff',
               boxShadow: 3,
               borderRadius: '8px',
-              flex: 1, // Ensures both Paper components stretch equally
+              flex: 1,
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between', // Ensure content is spaced out properly
+              justifyContent: 'space-between',
             }}
           >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 600,
-                fontSize: { xs: '1.25rem', sm: '1.5rem' },
-                color: '#6a1b9a',
-                mb: 2,
-              }}
-            >
-              Who Am I?
+            <Typography variant="h5" sx={{ fontWeight: 500, mb: 2 }}>
+              Hi, I'm Sunny Kumar
             </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: '#555',
-                fontSize: { xs: '1rem', sm: '1.125rem' },
-                lineHeight: 1.6,
-                mb: 4,
-              }}
-            >
-              I'm Sunny Kumar, a passionate and driven **Frontend Developer** with expertise in
-              **React.js**, **API Integration**, and **UI/UX design**. I enjoy building responsive,
-              user-friendly web applications that not only function smoothly but also provide an
-              engaging user experience.
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              I am a passionate and driven <strong>Frontend Developer SDE (Frontend)</strong> specializing in <strong>React.js</strong>, <strong>API Integration</strong>, and <strong>UI/UX design</strong>. With hands-on experience in building <strong>dynamic, responsive, and user-friendly web applications</strong>, I focus on creating seamless, high-performing solutions that engage users and deliver exceptional experiences across all devices.
             </Typography>
-            <Button
-              variant="outlined"
-              href="#contact"
-              sx={{
-                color: '#6a1b9a',
-                borderColor: '#6a1b9a',
-                '&:hover': {
-                  backgroundColor: '#6a1b9a',
-                  color: '#fff',
-                },
-                boxShadow: 2,
-                borderRadius: '8px',
-                px: 4,
-              }}
-            >
-              Get in Touch
-            </Button>
-          </Paper>
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              My journey into the tech world started with a deep curiosity about programming, which has evolved into a career dedicated to crafting intuitive user interfaces. Through <strong>multiple internships</strong> and <strong>real-world projects</strong>, I've gained expertise in both <strong>frontend development</strong> and <strong>WordPress</strong>. My skill set includes <strong>React.js</strong>, <strong>JavaScript</strong>, <strong>Material-UI</strong>, <strong>Tailwind CSS</strong>, <strong>Bootstrap</strong>, and <strong>API handling</strong>, enabling me to create responsive and scalable applications.
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              I have successfully collaborated with backend developers to integrate APIs, manage application state with tools like <strong>Redux</strong> and <strong>Context API</strong>, and implement role-based access control. This experience, along with my ability to <strong>troubleshoot issues, optimize performance, and work in Agile environments</strong>, has honed my problem-solving and teamwork skills, allowing me to deliver high-quality products that meet client needs.
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              In addition to frontend development, I have a solid background in <strong>WordPress</strong>, from building custom themes and plugins to enhancing site functionality with third-party API integrations. I’m passionate about learning new technologies and continuously pushing the boundaries of web development. Whether it's <strong>Artificial Intelligence</strong>, <strong>Machine Learning</strong>, or the latest tools in web design, I'm always excited to explore new frontiers in tech.
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 2 }}>
+              I believe in writing <strong>clean, efficient code</strong>, <strong>solving problems creatively</strong>, and <strong>focusing on user-centric designs</strong>. Communication and collaboration are key to delivering successful projects, and I thrive in fast-paced, collaborative environments where I can quickly adapt and contribute to innovative solutions.
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 4 }}>
+              🚀 <strong>Let’s build something great together!</strong>
+            </Typography>
 
-          {/* Second Section - My Skills */}
-          <Paper
-            sx={{
-              padding: 4,
-              backgroundColor: '#fff',
-              boxShadow: 3,
-              borderRadius: '8px',
-              flex: 1, // Ensures both Paper components stretch equally
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between', // Ensure content is spaced out properly
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{
-                fontWeight: 600,
-                fontSize: { xs: '1.25rem', sm: '1.5rem' },
-                color: '#6a1b9a',
-                mb: 2,
-              }}
-            >
-              My Skills
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: '#555',
-                fontSize: { xs: '1rem', sm: '1.125rem' },
-                lineHeight: 1.6,
-                mb: 4,
-              }}
-            >
-              I specialize in **React.js** for building fast, modern web apps. I have experience
-              with **state management** using **Redux** and **Context API**, integrating APIs using
-              **Axios**, and creating stunning user interfaces with **Material-UI**, **Tailwind CSS**, and
-              **Bootstrap**. I'm continuously learning and striving to stay up-to-date with the latest trends
-              in web development.
-            </Typography>
-            <Button
-              variant="outlined"
-              href="#projects"
-              sx={{
-                color: '#6a1b9a',
-                borderColor: '#6a1b9a',
-                '&:hover': {
-                  backgroundColor: '#6a1b9a',
-                  color: '#fff',
-                },
-                boxShadow: 2,
-                borderRadius: '8px',
-                px: 4,
-              }}
-            >
-              See My Work
-            </Button>
+            {/* Button to contact */}
+            <a href="#contact" style={{ textDecoration: 'none', alignSelf: 'center' }}>
+              <Button variant="contained" color="primary">
+                Let’s Connect!
+              </Button>
+            </a>
           </Paper>
         </Box>
       </Container>
