@@ -21,6 +21,7 @@ const Contact = () => {
     setSnackbarMessage('Thank you for reaching out! I will get back to you soon.');
     setOpenSnackbar(true);
     setFormData({ name: '', email: '', message: '' });
+    console.log('Form submitted:', formData);
   };
 
   return (
