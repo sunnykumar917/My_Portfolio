@@ -4,7 +4,7 @@ import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 
 const Footer: React.FC = () => {
   return (
-    <Box sx={{ backgroundColor: '#212121', color: 'white', py: 6, mt: 4, borderTop: '2px solid #333' }}>
+    <Box sx={{ backgroundColor: '#212121', color: 'white', py: 6, borderTop: '2px solid #333' }}>
       <Container maxWidth="lg">
         {/* Top: Copyright and Social Links */}
         <Box display="flex" justifyContent="space-between" alignItems="center">
@@ -63,7 +63,6 @@ const Footer: React.FC = () => {
           </Box>
         </Box>
 
-        {/* Bottom: Contact Info (Optional) */}
         <Box mt={2} textAlign="center">
           <Typography variant="body2" sx={{ fontSize: '0.9rem' }}>
             For inquiries, email me at{' '}
