@@ -1,11 +1,9 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-
 import Hero from './Sections/Hero';
 import About from './Sections/About';
 import Projects from './Sections/Projects';
 import Skills from './Sections/Skills';
 import Contact from './Sections/Contact';
-
 import Layout from './Components/Layout/Layout'; 
 
 const App: React.FC = () => {
@@ -13,7 +11,6 @@ const App: React.FC = () => {
   return (
     
       <Router>
-        
         <Layout>
           <Routes>
             
