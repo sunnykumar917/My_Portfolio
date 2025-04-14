@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Container, Typography, Paper, Button, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Container, Typography, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 
 const reactJsProjects = [
   {
@@ -93,8 +93,8 @@ const wordpressProjects = [
 ];
 
 const Projects: React.FC = () => {
-  const [currentProject, setCurrentProject] = React.useState<any | null>(null);
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [currentProject, setCurrentProject] = useState<any>(null);
 
   const handleClickOpen = (project: any) => {
     setCurrentProject(project);
@@ -102,9 +102,9 @@ const Projects: React.FC = () => {
   };
 
   const handleClose = () => {
-    setCurrentProject(null);
     setOpen(false);
   };
+
   return (
     <Box
       sx={{
@@ -114,7 +114,7 @@ const Projects: React.FC = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography
+      <Typography
           variant="h3"
           component="h2"
           sx={{
@@ -260,7 +260,6 @@ const Projects: React.FC = () => {
           </Box>
         </Box>
 
-        {/* WordPress Projects Section */}
         {/* WordPress Projects Section */}
         <Box
           sx={{

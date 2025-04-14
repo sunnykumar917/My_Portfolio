@@ -1,9 +1,10 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, Container } from '@mui/material';
+import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, Container, useScrollTrigger } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-scroll';
 const Header: React.FC = () => {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const trigger = useScrollTrigger();
 
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
@@ -11,8 +12,15 @@ const Header: React.FC = () => {
 
   return (
     <>
-      
-      <AppBar position="sticky" sx={{ backgroundColor: '#212121' }}>
+      <AppBar
+        position="sticky"
+        elevation={trigger ? 4 : 0}
+        sx={{
+          backgroundColor: trigger ? 'rgba(33, 33, 33, 0.7)' : '#212121',
+          backdropFilter: trigger ? 'blur(10px)' : 'none',
+          transition: 'background-color 0.3s ease, backdrop-filter 0.3s ease',
+        }}
+      >
         <Container maxWidth="xl">
           <Toolbar sx={{ justifyContent: 'space-between', display: 'flex' }}>
             <Typography variant="h6" sx={{ fontWeight: 'bold', textTransform: 'uppercase', color: 'white' }}>
@@ -35,14 +43,13 @@ const Header: React.FC = () => {
                 Contact
               </Button>
             </Box>
-
             <IconButton sx={{ display: { xs: 'block', md: 'none' } }} onClick={toggleDrawer} color="inherit">
               <MenuIcon />
             </IconButton>
           </Toolbar>
         </Container>
       </AppBar>
-
+  
       <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer}>
         <Box sx={{ width: 250, padding: 2 }}>
           <Button fullWidth onClick={toggleDrawer} component={Link} to="hero" smooth={true} duration={500} offset={-70}>
@@ -64,6 +71,7 @@ const Header: React.FC = () => {
       </Drawer>
     </>
   );
+  
 };
 
 export default Header;
