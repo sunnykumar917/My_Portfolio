@@ -1,43 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Hero from './Sections/Hero';
-import About from './Sections/About';
-import Projects from './Sections/Projects';
-import Skills from './Sections/Skills';
-import Contact from './Sections/Contact';
-import Layout from './Components/Layout/Layout'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Layout from './Components/Layout/Layout';
+import AboutDetailed from './Pages/About'; // Full About page
+import Home from './Pages/Home'; // Landing page with all sections
+import ProjectPage from './Pages/ProjectPage';
+import  SkillsPage from './Pages/SkillsPage'; // Skills page
+import Contact from './Pages/Contact';
 
 const App: React.FC = () => {
-  
   return (
-    
-      <Router>
-        <Layout>
-          <Routes>
-            
-            <Route path="/hero" element={<Hero />} />     
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-           <div id="hero">
-            <Hero />
-          </div> 
-          <div id="about">
-            <About /> 
-          </div>
-          <div id="projects">
-            <Projects />
-          </div>
-          <div id="skills">
-            <Skills />
-          </div>
-          <div id="contact">
-            <Contact />
-          </div>
-        </Layout>
-      </Router>
-   
+    <Router>
+      <Routes>
+        {/* Landing page with all sections */}
+        <Route path="/" element={<Home/>} />
+        
+        {/* Full detailed About page */}
+        <Route path="/about-detailed" element={<Layout><AboutDetailed /></Layout>} />
+        <Route path="/projectpage" element={<Layout><ProjectPage /></Layout>} />
+        <Route path="/SkillsPage" element={<Layout><SkillsPage/></Layout>} />
+        <Route path="/contact" element={<Layout><Contact/></Layout>} />
+
+
+      </Routes>
+    </Router>
   );
 };
 

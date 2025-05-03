@@ -92,7 +92,7 @@ const Hero: React.FC = () => {
           <Button
             variant="contained"
             size="large"
-            href="#projects"
+            href="/projectpage"
             sx={{
               backgroundColor: '#8e24aa',
               '&:hover': {
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
           <Button
             variant="outlined"
             size="large"
-            href="#contact"
+            href="/contact"
             sx={{
               color: '#ce93d8',
               borderColor: '#ce93d8',
