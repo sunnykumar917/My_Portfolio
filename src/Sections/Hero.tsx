@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, Container, Typography, Button, Stack } from '@mui/material';
+import { Box, Container, Typography, Stack } from '@mui/material';
+import Button from '../Components/Layout/Button/Button'; // Adjust the path as needed
 
 const Hero: React.FC = () => {
   return (
@@ -94,36 +95,22 @@ const Hero: React.FC = () => {
             size="large"
             href="/projectpage"
             sx={{
-              backgroundColor: '#8e24aa',
-              '&:hover': {
-                backgroundColor: '#7b1fa2',
-              },
-              boxShadow: 3,
               borderRadius: '999px',
-              px: 4,
             }}
           >
             View Projects
           </Button>
 
           <Button
-            variant="outlined"
+            variant="contained"
             size="large"
             href="/contact"
             sx={{
-              color: '#ce93d8',
-              borderColor: '#ce93d8',
-              '&:hover': {
-                backgroundColor: '#8e24aa',
-                color: '#fff',
-                borderColor: '#8e24aa',
-              },
-              boxShadow: 3,
               borderRadius: '999px',
-              px: 4,
-            }}
+              
+            }} 
           >
-            Contact Me
+            Contact Me 
           </Button>
         </Stack>
       </Container>

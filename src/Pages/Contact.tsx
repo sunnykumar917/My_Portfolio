@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Button from '../Components/Layout/Button/Button';
+import TextField from '../Components/Layout/TextField/TextField';
+
 import {
   Box,
   Container,
   Typography,
-  TextField,
-  Button,
+
   Snackbar,
   Alert,
   Paper,
@@ -31,6 +33,7 @@ const Contact = () => {
     setFormData({ name: '', email: '', message: '' });
     console.log('Form submitted:', formData);
   };
+  
 
   return (
     <Box
@@ -65,58 +68,51 @@ const Contact = () => {
           <form onSubmit={handleSubmit}>
             <TextField
               label="Your Name"
-              variant="outlined"
               name="name"
               value={formData.name}
               onChange={handleChange}
+              placeholder="Enter your name"
               fullWidth
-              required
-              sx={{ mb: 3 }}
             />
 
             <TextField
               label="Your Email"
-              variant="outlined"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              fullWidth
-              required
+              placeholder="Enter your email"
               type="email"
-              sx={{ mb: 3 }}
+              fullWidth
+              error={formData.email !== '' && !formData.email.includes('@')}
+              helperText={
+                formData.email !== '' && !formData.email.includes('@')
+                  ? 'Enter a valid email address'
+                  : ''
+              }
             />
-
-            <TextField
+          <TextField
+              multiline
+              fullWidth
               label="Your Message"
-              variant="outlined"
               name="message"
               value={formData.message}
               onChange={handleChange}
-              fullWidth
-              required
-              multiline
-              rows={4}
-              sx={{ mb: 3 }}
+              placeholder="Type your message here"
+              sx={{
+                '& .MuiInputBase-inputMultiline': {
+                  minHeight: '150px',
+                },
+              }}
             />
 
             <Button
-              type="submit"
+
               variant="contained"
               size="large"
               fullWidth
-              sx={{
-                backgroundColor: '#8e24aa',
-                color: '#fff',
-                fontWeight: 600,
-                py: 1.5,
-                borderRadius: 2,
-                '&:hover': {
-                  backgroundColor: '#7b1fa2',
-                },
-              }}
-            >
+                          >
               Send Message
-            </Button>
+            </Button> 
           </form>
         </Paper>
 

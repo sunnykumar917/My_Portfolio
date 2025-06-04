@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import { Box, Container, Typography, Paper,  Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
+import Button from '../Components/Layout/Button/Button';
 
 const reactJsProjects = [
   {
@@ -26,36 +27,36 @@ const reactJsProjects = [
   
 ];
 
-const wordpressProjects = [
-  {
-    title: '💼 Business & Startup Landing Pages',
-    techStack: 'WordPress, Elementor, WPBakery, Custom CSS',
-    description: `Designed and developed landing pages for companies across various industries including tech, logistics, and digital services.`,
-    fullDescription: `This project involved creating highly responsive and visually appealing landing pages for businesses in different sectors. The design emphasized lead generation, clear call-to-action buttons, and a user-friendly interface. It was built using WordPress with Elementor for ease of customization, and WPBakery was used for drag-and-drop functionality. Custom CSS was added for unique visual styles and branding.`,
-  },
-  {
-    title: '🏥 Hospital Website',
-    techStack: 'WordPress, Elementor',
-    description: `Built a responsive hospital website featuring appointment booking, department overviews, and a mobile-first layout.`,
-    fullDescription: `For this hospital website, the main goal was to ensure easy access to medical services and information. It included a booking system for appointments, a department overview page, and an emergency contact section. Elementor was used for building custom pages while maintaining a clean, professional design. The website was optimized for mobile usage, as it is essential for healthcare service providers to be accessible on any device.`,
-  },
-  {
-    title: '🌐 NGO Foundation Website',
-    techStack: 'WordPress, Elementor, Custom CSS',
-    description: `Created a website for a non-profit organization to showcase their mission, projects, and fundraising campaigns.`,
-    fullDescription: `This website for the NGO focuses on providing information about their mission, upcoming events, and campaigns. The website encourages users to donate and get involved through clearly visible buttons and forms. Elementor was used to build flexible and customizable layouts, and custom CSS was applied to achieve a unique look aligned with the organization's brand identity.`,
-  },
+// const wordpressProjects = [
+//   {
+//     title: '💼 Business & Startup Landing Pages',
+//     techStack: 'WordPress, Elementor, WPBakery, Custom CSS',
+//     description: `Designed and developed landing pages for companies across various industries including tech, logistics, and digital services.`,
+//     fullDescription: `This project involved creating highly responsive and visually appealing landing pages for businesses in different sectors. The design emphasized lead generation, clear call-to-action buttons, and a user-friendly interface. It was built using WordPress with Elementor for ease of customization, and WPBakery was used for drag-and-drop functionality. Custom CSS was added for unique visual styles and branding.`,
+//   },
+//   {
+//     title: '🏥 Hospital Website',
+//     techStack: 'WordPress, Elementor',
+//     description: `Built a responsive hospital website featuring appointment booking, department overviews, and a mobile-first layout.`,
+//     fullDescription: `For this hospital website, the main goal was to ensure easy access to medical services and information. It included a booking system for appointments, a department overview page, and an emergency contact section. Elementor was used for building custom pages while maintaining a clean, professional design. The website was optimized for mobile usage, as it is essential for healthcare service providers to be accessible on any device.`,
+//   },
+//   {
+//     title: '🌐 NGO Foundation Website',
+//     techStack: 'WordPress, Elementor, Custom CSS',
+//     description: `Created a website for a non-profit organization to showcase their mission, projects, and fundraising campaigns.`,
+//     fullDescription: `This website for the NGO focuses on providing information about their mission, upcoming events, and campaigns. The website encourages users to donate and get involved through clearly visible buttons and forms. Elementor was used to build flexible and customizable layouts, and custom CSS was applied to achieve a unique look aligned with the organization's brand identity.`,
+//   },
   
-];
+// ];
 
 const Projects: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState<any>(null);
 
-  const handleClickOpen = (project: any) => {
-    setCurrentProject(project);
-    setOpen(true);
-  };
+  //const handleClickOpen = (project: any) => {
+  // setCurrentProject(project);
+ //   setOpen(true);
+ // };
 
   const handleClose = () => {
     setOpen(false);
@@ -168,46 +169,18 @@ const Projects: React.FC = () => {
                     {project.description}
                   </Typography>
                   <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      href={project.link}
-                      target="_blank"
-                      sx={{
-                        backgroundColor: '#8e24aa',
-                        '&:hover': {
-                          backgroundColor: '#7b1fa2',
-                        },
-                        boxShadow: 3,
-                        borderRadius: '8px',
-                        px: 4,
-                        fontWeight: 'bold',
-                        textTransform: 'capitalize',
-                        fontSize: '1rem',
-                      }}
-                    >
-                      View Code
-                    </Button>
-                    <Button
-                      variant="outlined"
-                      color="primary"
-                      href={project.demoLink}
-                      target="_blank"
-                      sx={{
-                        borderColor: '#8e24aa',
-                        color: '#8e24aa',
-                        '&:hover': {
-                          backgroundColor: '#8e24aa',
-                          color: 'white',
-                        },
-                        boxShadow: 3,
-                        borderRadius: '8px',
-                        px: 4,
-                        fontWeight: 'bold',
-                        textTransform: 'capitalize',
-                        fontSize: '1rem',
-                      }}
-                    >
+                  <Button
+                    variant="contained"
+                    href={project.link}
+                    target="_blank"
+                  >
+                    View Code
+                  </Button>
+                  <Button
+                    variant="contained"
+                    href={project.demoLink}
+                    target="_blank"
+                  >
                       Live Demo
                     </Button>
                   </Box>
@@ -325,22 +298,9 @@ const Projects: React.FC = () => {
         </Box> */}
         <Box display="flex" justifyContent="center" mt={6}>
           <Button
-            variant="contained"
-            color="primary"
+            variant="contained" 
             href="/projectpage"
-            sx={{
-              backgroundColor: '#8e24aa',
-              '&:hover': {
-                backgroundColor: '#7b1fa2',
-              },
-              boxShadow: 4,
-              borderRadius: '8px',
-              px: 5,
-              py: 1.5,
-              fontWeight: 'bold',
-              textTransform: 'capitalize',
-              fontSize: '1rem',
-            }}
+            
           >
             More Projects
           </Button>
@@ -376,7 +336,7 @@ const Projects: React.FC = () => {
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+          <Button onClick={handleClose} >
             Close
           </Button>
         </DialogActions>

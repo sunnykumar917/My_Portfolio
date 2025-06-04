@@ -1,5 +1,5 @@
-// AboutSummary.tsx
-import { Box, Container, Typography, Button } from '@mui/material';
+import { Box, Container, Typography} from '@mui/material';
+import CustomButton from '../Components/Layout/Button/Button';
 
 const AboutSummary: React.FC = () => {
   return (
@@ -35,26 +35,9 @@ const AboutSummary: React.FC = () => {
         </Typography>
 
         <Box display="flex" justifyContent="center" mt={6}>
-          <Button
-            variant="contained"
-            color="primary"
-            href="/about-detailed"
-            sx={{
-              backgroundColor: '#8e24aa',
-              '&:hover': {
-                backgroundColor: '#7b1fa2',
-              },
-              boxShadow: 4,
-              borderRadius: '8px',
-              px: 5,
-              py: 1.5,
-              fontWeight: 'bold',
-              textTransform: 'capitalize',
-              fontSize: '1rem',
-            }}
-          >
+          <CustomButton href="/about-detailed">
             View in Details
-          </Button>
+          </CustomButton>
         </Box>
       </Container>
     </Box>
