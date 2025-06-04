@@ -7,7 +7,6 @@ import {
   Container,
   Typography,
 
-
   Snackbar,
   Alert,
   Paper,
@@ -34,13 +33,14 @@ const Contact = () => {
     setFormData({ name: '', email: '', message: '' });
     console.log('Form submitted:', formData);
   };
+  
 
   return (
     <Box
       id="contact"
       sx={{
         py: { xs: 6, sm: 8 },
-        background: 'linear-gradient(135deg, #f5f5f5, #e0e0e0)',
+        backgroundColor: '#f5f5f5',
       }}
     >
       <Container maxWidth="sm">
@@ -90,17 +90,23 @@ const Contact = () => {
                   : ''
               }
             />
-
-            <TextField
+          <TextField
+              multiline
+              fullWidth
               label="Your Message"
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Type your message here"
-              fullWidth
+              sx={{
+                '& .MuiInputBase-inputMultiline': {
+                  minHeight: '150px',
+                },
+              }}
             />
 
             <Button
+
               variant="contained"
               size="large"
               fullWidth

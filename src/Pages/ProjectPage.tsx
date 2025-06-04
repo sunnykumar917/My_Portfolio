@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Container, Typography, Paper,  Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import Button from '../Components/Layout/Button/Button';
+import { Box, Container, Typography, Paper, Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 
 const reactJsProjects = [
   {
@@ -24,39 +23,83 @@ const reactJsProjects = [
     link: 'https://github.com/yourusername/landing-page',
     demoLink: 'https://landing-page-demo.com',
   },
-  
+  {
+    title: '💻 Portfolio Website',
+    techStack: 'React.js, Material-UI',
+    description: `A personal developer portfolio to showcase skills, experience, and projects.`,
+    link: 'https://github.com/yourusername/portfolio-website',
+    demoLink: 'https://portfolio-demo.com',
+  },
+  {
+    title: '🌦️ Weather App',
+    techStack: 'HTML, CSS, JavaScript',
+    description: `A simple real-time weather app that retrieves and displays weather data from a public API.`,
+    link: 'https://github.com/yourusername/weather-app',
+    demoLink: 'https://weather-app-demo.com',
+  },
+  {
+    title: '🧁 Cake Shop Web Application',
+    techStack: 'HTML, CSS, JavaScript',
+    description: `An interactive, responsive website designed for a fictional cake business.`,
+    link: 'https://github.com/yourusername/cake-shop-app',
+    demoLink: 'https://cake-shop-demo.com',
+  },
+  {
+    title: '📝 Blog Website',
+    techStack: 'Node.js, Express.js, MongoDB, HTML, CSS',
+    description: `A full-stack blog platform for managing and publishing posts.`,
+    link: 'https://github.com/yourusername/blog-website',
+    demoLink: 'https://blog-website-demo.com',
+  },
 ];
 
-// const wordpressProjects = [
-//   {
-//     title: '💼 Business & Startup Landing Pages',
-//     techStack: 'WordPress, Elementor, WPBakery, Custom CSS',
-//     description: `Designed and developed landing pages for companies across various industries including tech, logistics, and digital services.`,
-//     fullDescription: `This project involved creating highly responsive and visually appealing landing pages for businesses in different sectors. The design emphasized lead generation, clear call-to-action buttons, and a user-friendly interface. It was built using WordPress with Elementor for ease of customization, and WPBakery was used for drag-and-drop functionality. Custom CSS was added for unique visual styles and branding.`,
-//   },
-//   {
-//     title: '🏥 Hospital Website',
-//     techStack: 'WordPress, Elementor',
-//     description: `Built a responsive hospital website featuring appointment booking, department overviews, and a mobile-first layout.`,
-//     fullDescription: `For this hospital website, the main goal was to ensure easy access to medical services and information. It included a booking system for appointments, a department overview page, and an emergency contact section. Elementor was used for building custom pages while maintaining a clean, professional design. The website was optimized for mobile usage, as it is essential for healthcare service providers to be accessible on any device.`,
-//   },
-//   {
-//     title: '🌐 NGO Foundation Website',
-//     techStack: 'WordPress, Elementor, Custom CSS',
-//     description: `Created a website for a non-profit organization to showcase their mission, projects, and fundraising campaigns.`,
-//     fullDescription: `This website for the NGO focuses on providing information about their mission, upcoming events, and campaigns. The website encourages users to donate and get involved through clearly visible buttons and forms. Elementor was used to build flexible and customizable layouts, and custom CSS was applied to achieve a unique look aligned with the organization's brand identity.`,
-//   },
-  
-// ];
+const wordpressProjects = [
+  {
+    title: '💼 Business & Startup Landing Pages',
+    techStack: 'WordPress, Elementor, WPBakery, Custom CSS',
+    description: `Designed and developed landing pages for companies across various industries including tech, logistics, and digital services.`,
+    fullDescription: `This project involved creating highly responsive and visually appealing landing pages for businesses in different sectors. The design emphasized lead generation, clear call-to-action buttons, and a user-friendly interface. It was built using WordPress with Elementor for ease of customization, and WPBakery was used for drag-and-drop functionality. Custom CSS was added for unique visual styles and branding.`,
+  },
+  {
+    title: '🏥 Hospital Website',
+    techStack: 'WordPress, Elementor',
+    description: `Built a responsive hospital website featuring appointment booking, department overviews, and a mobile-first layout.`,
+    fullDescription: `For this hospital website, the main goal was to ensure easy access to medical services and information. It included a booking system for appointments, a department overview page, and an emergency contact section. Elementor was used for building custom pages while maintaining a clean, professional design. The website was optimized for mobile usage, as it is essential for healthcare service providers to be accessible on any device.`,
+  },
+  {
+    title: '🌐 NGO Foundation Website',
+    techStack: 'WordPress, Elementor, Custom CSS',
+    description: `Created a website for a non-profit organization to showcase their mission, projects, and fundraising campaigns.`,
+    fullDescription: `This website for the NGO focuses on providing information about their mission, upcoming events, and campaigns. The website encourages users to donate and get involved through clearly visible buttons and forms. Elementor was used to build flexible and customizable layouts, and custom CSS was applied to achieve a unique look aligned with the organization's brand identity.`,
+  },
+  {
+    title: '🚗 Automobile Parts Website',
+    techStack: 'WordPress, Elementor',
+    description: `Developed a structured, product-focused site for an automobile parts company with categorized listings and visual highlights.`,
+    fullDescription: `For this project, the goal was to create a catalog-driven site to showcase automobile parts for sale. The site featured product categories, detailed product pages, and an easy-to-navigate shopping experience. Elementor provided an easy way to build the site's dynamic pages, while custom CSS ensured the visual aspects were aligned with the client's brand.`,
+  },
+  {
+    title: '📝 Blog Website',
+    techStack: 'WordPress, Custom Theme, Elementor',
+    description: `Designed a clean and functional blog site with category filtering, easy navigation, and a content-first design.`,
+    fullDescription: `This blog website focuses on creating a seamless reading experience. The layout is simple and intuitive, with clear category filtering for posts. The WordPress custom theme allowed for greater flexibility in terms of design and functionality. Elementor was used to build custom pages and sections, ensuring that the blog site was both visually appealing and easy to navigate.`,
+  },
+  {
+    title: '🏫 School Website',
+    techStack: 'WordPress, Elementor, Custom CSS',
+    description: `Developed a website for a school, including a dynamic homepage, course listings, faculty profiles, and student portal.`,
+    fullDescription: `This project involved building a user-friendly and informative school website. It included sections for course listings, faculty profiles, and a student portal. The design was mobile-first, ensuring accessibility across devices. Elementor was used to create and manage the pages easily, while custom CSS was added for specific styling requirements.`,
+  },
+];
 
 const Projects: React.FC = () => {
   const [open, setOpen] = useState(false);
   const [currentProject, setCurrentProject] = useState<any>(null);
 
-  //const handleClickOpen = (project: any) => {
-  // setCurrentProject(project);
- //   setOpen(true);
- // };
+  const handleClickOpen = (project: any) => {
+    setCurrentProject(project);
+    setOpen(true);
+  };
 
   const handleClose = () => {
     setOpen(false);
@@ -94,7 +137,6 @@ const Projects: React.FC = () => {
             mb: 6,
           }}
         >
-          {/* React Projects Section 
           <Typography
             variant="h4"
             component="h3"
@@ -105,8 +147,8 @@ const Projects: React.FC = () => {
               fontSize: { xs: '2rem', sm: '2.5rem' },
             }}
           >
-           // React & JS Projects
-          </Typography> */}
+            React & JS Projects
+          </Typography>
 
           <Box
             sx={{
@@ -169,18 +211,46 @@ const Projects: React.FC = () => {
                     {project.description}
                   </Typography>
                   <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
-                  <Button
-                    variant="contained"
-                    href={project.link}
-                    target="_blank"
-                  >
-                    View Code
-                  </Button>
-                  <Button
-                    variant="contained"
-                    href={project.demoLink}
-                    target="_blank"
-                  >
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      href={project.link}
+                      target="_blank"
+                      sx={{
+                        backgroundColor: '#8e24aa',
+                        '&:hover': {
+                          backgroundColor: '#7b1fa2',
+                        },
+                        boxShadow: 3,
+                        borderRadius: '8px',
+                        px: 4,
+                        fontWeight: 'bold',
+                        textTransform: 'capitalize',
+                        fontSize: '1rem',
+                      }}
+                    >
+                      View Code
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      href={project.demoLink}
+                      target="_blank"
+                      sx={{
+                        borderColor: '#8e24aa',
+                        color: '#8e24aa',
+                        '&:hover': {
+                          backgroundColor: '#8e24aa',
+                          color: 'white',
+                        },
+                        boxShadow: 3,
+                        borderRadius: '8px',
+                        px: 4,
+                        fontWeight: 'bold',
+                        textTransform: 'capitalize',
+                        fontSize: '1rem',
+                      }}
+                    >
                       Live Demo
                     </Button>
                   </Box>
@@ -190,7 +260,7 @@ const Projects: React.FC = () => {
           </Box>
         </Box>
 
-        {/* WordPress Projects Section
+        {/* WordPress Projects Section */}
         <Box
           sx={{
             display: 'flex',
@@ -295,17 +365,7 @@ const Projects: React.FC = () => {
               </Box>
             ))}
           </Box>
-        </Box> */}
-        <Box display="flex" justifyContent="center" mt={6}>
-          <Button
-            variant="contained" 
-            href="/projectpage"
-            
-          >
-            More Projects
-          </Button>
         </Box>
-
       </Container>
 
       {/* Dialog (Modal) for project details */}
@@ -336,13 +396,12 @@ const Projects: React.FC = () => {
           </Typography>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} >
+          <Button onClick={handleClose} color="primary">
             Close
           </Button>
         </DialogActions>
       </Dialog>
     </Box>
-    
   );
 };
 

@@ -14,7 +14,7 @@ const Footer = () => {
         py: 4,
         px: { xs: 2, sm: 6 },
         textAlign: 'center',
-        mt: 8,
+        
       }}
     >
       {/* Footer Title */}
